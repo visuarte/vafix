@@ -67,3 +67,62 @@ V6 — Primer disparo (CRÍTICO)
 Esto convierte VAFIX en una herramienta que no solo planifica la secuencia,
 sino que **certifica que lo planeado cumple la ley.** En una industria donde
 un error puede ser un accidente, eso no es un lujo — es una obligación.
+
+---
+
+## 5. Dispositivos mecánicos para simular explosiones
+
+Tecnología real que los técnicos FX usan en España para generar explosiones
+sin pólvora (o reduciéndola al mínimo). Cada viñeta puede referenciar el
+dispositivo concreto que ejecuta el efecto.
+
+### 5.1 Cañones neumáticos (Air Cannons)
+
+| Dispositivo | Función | Para qué viñeta |
+|---|---|---|
+| **Debris Cannon** | Aire comprimido lanza corcho, turba, polvo | V1 (polvo orugas), V4 (polvo volumétrico) |
+| **Air Squib** | Micro-impactos de bala bajo ropa | V3 (impacto visor), V6 (impacto T-34) |
+
+Seguridad: Sin fuego, sin pólvora, sin metralla real.
+Materiales: Corcho, polvo de madera, espuma, plástico blando.
+
+### 5.2 Dispositivos de gas y fuego controlado
+
+| Dispositivo | Función | Para qué viñeta |
+|---|---|---|
+| **Propane Cannon** | Gas propano + chispa → llamarada limpia | V6 (fogonazo cañón), V7 (explosión torreta) |
+| **Lanzallamas DMX** | Fuego secuencial controlado por mesa de luz | V9 (dos fogonazos simultáneos), V10 (fuego torreta) |
+
+Clave: El DMX permite **sincronizar con código de tiempo de cámara.**
+Esto es exactamente lo que la timeline de VAFIX debe reflejar.
+
+### 5.3 Impulsión de vehículos
+
+| Dispositivo | Función | Para qué viñeta |
+|---|---|---|
+| **Nitrogen Jack** | Pistón de nitrógeno voltea vehículos | V10 (torreta despedida) |
+
+Sin explosivos. El pistón golpea el suelo con fuerza masiva
+y el vehículo salta mientras los VFX añaden humo y fuego alrededor.
+
+### 5.4 Consumibles de seguridad
+
+| Material | Función | Para qué viñeta |
+|---|---|---|
+| **Breakaway Glass** | Resina frágil que imita cristal | (no aplica directamente al proyecto actual) |
+| **Polvos de dispersión** | Harinas inertes para humo/polvo visual | V1, V4, V8 (polvo, humo, niebla) |
+
+### Mapa dispositivo → viñeta
+
+| Viñeta | Efecto | Dispositivo recomendado |
+|---|---|---|
+| V1 | Polvo orugas + niebla | Debris Cannon |
+| V2 | Humo motor | Air compressor + humo artificial |
+| V3 | Impacto visor | Air Squib |
+| V4 | Polvo volumétrico 18 tanques | Debris Cannon + VFX |
+| V5 | Vegetación moviéndose | Servos / Animatrónica |
+| V6 | Fogonazo + retroceso cañón | Propane Cannon + Nitrogen Jack |
+| V7 | Explosión torreta + fragmentos | Propane Cannon + Air Squibs |
+| V8 | Humo + niebla retirada | Máquina de humo + Debris Cannon |
+| V9 | Dos fogonazos simultáneos | 2× Propane Cannon sincronizados DMX |
+| V10 | Torreta despedida + fuego | Nitrogen Jack + Lanzallamas DMX |
