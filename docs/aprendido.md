@@ -58,3 +58,29 @@ La herramienta vale si integra las tres. No sirve de nada una timeline bonita
 que no contemple los tiempos de seguridad. No sirve de nada la seguridad 
 si no entiendes cómo se rueda. No sirve de nada rodar si no tienes la lógica 
 temporal bien modelada.
+
+---
+
+## Video 4: Creating BULLET HIT Movie Special FX
+`https://www.youtube.com/watch?v=FH17Zh09rGY`
+
+**Qué nos da:**
+- Técnicas prácticas para impactos de bala en rodaje
+- Cómo se prepara el set para impactos controlados
+- La diferencia entre un impacto visto desde lejos vs un primer plano
+- Pequeños explosivos controlados para simular impactos
+
+**Para VAFIX:**
+- El proyecto StuG vs T-34 tiene impactos de proyectil (V6, V7)
+- No todos los impactos son iguales: distancia, ángulo, material
+- La viñeta necesita campo "tipo de impacto" para planificar seguridad
+- Los impactos en primer plano (V6) requieren más coordinación que los generales
+
+**Conexión con las otras fuentes:**
+
+| Video | Técnica | Para qué viñeta |
+|---|---|---|
+| 1 - PyGame | Animación por frames de explosión | V6 (fogonazo), V9 (dos impactos) |
+| 2 - Filmación | Cómo se rueda fuego real | Todas, pero especialmente V7 (explosión torreta) |
+| 3 - Seguridad | Protocolos de distancia y protección | V6, V7, V9 (las que tienen pirotecnia) |
+| 4 - Bullet hits | Impactos controlados | V6 (primer disparo), V7 (impacto T-34) |
