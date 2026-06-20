@@ -146,6 +146,32 @@ necesita para no parecer pegada en post.
 | **Breakaway Glass** | Resina frágil que imita cristal | (no aplica directamente al proyecto actual) |
 | **Polvos de dispersión** | Harinas inertes para humo/polvo visual | V1, V4, V8 (polvo, humo, niebla) |
 
+### 5.8 Nivel avanzado — Nitrógeno industrial + Timecode SMPTE
+
+| Sistema | Especificación |
+|---|---|
+| Nitrógeno seco 200 bar | Botellas industriales (Carburos Metálicos, Linde) |
+| Válvula mariposa Rack&Pinion | 3-6", apertura en <30ms, acero inoxidable |
+| E-Match retardo cero | Ignición en microsegundos para cámaras 1000fps |
+| Consolas Galaxis / Fireone / Pyrodigital | Encriptación militar, testeo bidireccional, deadman switch |
+| Timecode LTC | Sincronización con cámara y sonido |
+| Motion Control Bolt | Trayectoria robótica programada para seguir vehículo |
+
+**Secuencia automatizada tipo:**
+```
+T-5s:  Extractores de humo
+T-100ms: Flasheadores LED DMX (luz naranja)
+T+0ms:  Cañón nitrógeno (fotograma 0)
+T+250ms: Ráfagas escombros secundarias
+```
+
+**Requisitos legales España:**
+- Carné T2/P2 (Delegación del Gobierno)
+- Plan de Emergencia firmado por Ingeniero
+- Distancias de seguridad calculadas (overpressure + radiación térmica)
+- Seguro responsabilidad civil cinematográfica
+- Dotación de Bomberos en set
+
 ### Mapa dispositivo → viñeta
 
 | Viñeta | Efecto | Dispositivo recomendado |
