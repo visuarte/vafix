@@ -105,7 +105,41 @@ Esto es exactamente lo que la timeline de VAFIX debe reflejar.
 Sin explosivos. El pistón golpea el suelo con fuerza masiva
 y el vehículo salta mientras los VFX añaden humo y fuego alrededor.
 
-### 5.4 Consumibles de seguridad
+### 5.4 Sistemas de disparo secuencial (Show Control)
+
+| Sistema | Función |
+|---|---|
+| **Secuenciador multicanal** | 12-36 canales, programación en ms |
+| **E-Match (ignitor eléctrico)** | Retardo cero en electroválvulas |
+| **Código de tiempo** | Sincronización con cámara (timecode) |
+
+Clave: el secuenciador permite coreografiar la onda expansiva:
+Cañón 1 a 0ms → Cañón 2 a 150ms → Cañón 3 a 300ms = avance real.
+
+### 5.5 Morteros de propano líquido (Gas Cannons)
+
+| Componente | Función |
+|---|---|
+| Botella propano con sifón | Extrae fase líquida (no gas) |
+| Electroválvula criogénica 1.5-2" | Soporta congelación del gas |
+| Cámara de mezcla + piloto electrónico | Chispa continua 12V en boca |
+
+Funcionamiento: abre válvula 0.2s → propano líquido se atomiza → 
+chispa lo enciende → bola de fuego limpia → al cerrar, desaparece sin brasas.
+
+### 5.6 Flujo híbrido físico-digital
+
+| Técnica | Función |
+|---|---|
+| **Trackers LED activos** | Esferas LED entre escombros para tracking VFX |
+| **Flasheadores DMX 1000W** | Luz naranja/amarilla 1 frame sincronizada con cañón |
+| **ActionVFX / librerías** | Llamaradas digitales hiperrealistas post-producción |
+
+Clave: el efecto físico se diseña para que el VFX digital lo complete.
+Los flasheadores DMX dan la luz ambiental real que la explosión digital
+necesita para no parecer pegada en post.
+
+### 5.7 Consumibles de seguridad
 
 | Material | Función | Para qué viñeta |
 |---|---|---|
