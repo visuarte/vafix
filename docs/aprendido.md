@@ -85,6 +85,9 @@ temporal bien modelada.
 | 3 - Seguridad | Protocolos de distancia y protección | V6, V7, V9 (las que tienen pirotecnia) |
 | 4 - Bullet hits | Impactos controlados | V6 (primer disparo), V7 (impacto T-34) |
 | 5 - Animatrónica | Movimiento mecánico de vehículos | V10 (torreta despedida), V6 (retroceso cañón) |
+| 6 - Animatrónica práctica | Construcción de mecanismos reales | V5 (vegetación dinámica), V9 (árboles sacudidos) |
+| 7 - Python `fxy` | Librería científica para modelado | Modelado de tiempos y físicas en VAFIX |
+| 8 - Explosivos reales | Lo que parece real vs lo que no | TODAS — criterio de calidad para las viñetas |
 
 ---
 
@@ -102,3 +105,59 @@ temporal bien modelada.
 - El retroceso del cañón en V6 necesita sincronización mecánica
 - Las viñetas con movimiento requieren campo "tipo de accionamiento"
 - La timeline debe considerar tiempos mecánicos (no solo explosivos)
+
+---
+
+## Video 6: Making the Halloween Animatronic
+`https://www.youtube.com/watch?v=uesl7em6btA`
+
+**Qué nos da:**
+- Continuación práctica de animatrónica: construcción real
+- Motores, servos, articulaciones, control por Arduino
+- Cómo se integra el movimiento con el resto de la escena
+
+**Para VAFIX:**
+- V5 (ocultamiento en la ladera): la vegetación dinámica puede ser animatrónica
+- V9 (árboles sacudidos por onda expansiva): impacto mecánico
+- Las viñetas con "movimiento" necesitan pensar en motores, no solo en pólvora
+
+---
+
+## Video 7: Common scientific imports — pip install fxy
+`https://www.youtube.com/watch?v=xkbRmfd86u8`
+
+**Qué nos da:**
+- Librería Python `fxy` para computación científica
+- Modelado matemático de fenómenos físicos
+- Herramientas que podemos usar para simular tiempos de FX
+
+**Para VAFIX:**
+- No para el lunes, sí para después
+- Podemos modelar la física de una explosión y compararla con la timeline
+- `fxy` como posible backend científico si VAFIX crece
+
+---
+
+## Video 8: Experto en explosivos puntúa películas
+`https://www.youtube.com/watch?v=8V5I5WQpfh0`
+
+**Qué nos da:**
+- Criterio profesional: qué hace que una explosión parezca real
+- Errores comunes: fuego sin onda expansiva, humo incorrecto, tiempos irrealistas
+- La diferencia entre una explosión que funciona y una que "se ve de mentira"
+
+**Para VAFIX:**
+- Cada viñeta debería poder tener un "índice de realismo" basado en estos criterios
+- V6 define el realismo de toda la escena (las notas ya lo dicen)
+- Podemos añadir checklist por viñeta: ¿onda expansiva visible? ¿humo coherente?
+- Esto convierte VAFIX de herramienta de planificación a herramienta de control de calidad
+
+**Conexión directa con las viñetas de Santiago:**
+
+| Criterio del experto | Viñeta afectada | Riesgo si se ignora |
+|---|---|---|
+| Onda expansiva invisible | V6 (fogonazo), V7 (impacto) | Parece fuego artificial |
+| Humo incoherente | V4 (polvo), V8 (retirada) | Rompe la profundidad |
+| Fragmentos mal sincronizados | V7 (blindaje), V9 (duelo) | Se ve a cámara lenta de mentira |
+| Luz de explosión sin reflejo | V6, V7, V9 | El metal no reacciona |
+| Torreta que no pesa | V10 | Parece de corcho |
