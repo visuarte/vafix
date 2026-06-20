@@ -1,0 +1,232 @@
+{
+  "proyecto": "StuG III vs T-34",
+  "cliente": "Santiago Espin Canovas",
+  "reunion": "Lunes - reunion VFX",
+  "total": 10,
+  "vignetas": [
+    {
+      "id": "da204fec1bb6",
+      "numero": 1,
+      "titulo": "Llegada a la cota 65.5",
+      "composicion": "Plano general amplio. StuG avanza desde izquierda al centro. Terreno sovietico irregular.",
+      "fx": [
+        "Polvo orugas",
+        "Barro salpicando",
+        "Niebla ligera",
+        "Vibracion chasis"
+      ],
+      "svfx": [
+        "Polvo levantado (refuerzo)",
+        "Niebla atmosferica (extension)",
+        "Vibracion camara"
+      ],
+      "luz": [
+        "Luz fria difusa (cielo cubierto)",
+        "Contraste suave",
+        "Sin sol directo"
+      ],
+      "notas": "Coordinar polvo fisico + digital. Plantear pre-viz semana 1",
+      "critico": "aviso"
+    },
+    {
+      "id": "67c19ede1c57",
+      "numero": 2,
+      "titulo": "Posicionamiento en la colina",
+      "composicion": "Plano general lateral. StuG estabilizado. Wittmann asoma con prismaticos.",
+      "fx": [
+        "Humo motor leve",
+        "Suspension ajustandose",
+        "Polvo residual"
+      ],
+      "svfx": [
+        "Profundidad atmosferica",
+        "Lens flare tenue",
+        "Contraluz suave (silueta)"
+      ],
+      "luz": [
+        "Contraluz que perfila tanque",
+        "Fuente lateral calida simulando atardecer"
+      ],
+      "notas": "Croma para silueta? Decidir con VFX. Practico de humo sincronizado",
+      "critico": "ok"
+    },
+    {
+      "id": "43e7fe8f9344",
+      "numero": 3,
+      "titulo": "Primer avistamiento enemigo",
+      "composicion": "Subjetiva desde visor artillero (Sfl.ZF). Siluetas T-34 entre polvo.",
+      "fx": [
+        "Polvo delantero (capa fina)",
+        "Vibracion mecanica"
+      ],
+      "svfx": [
+        "Distorsion lente militar",
+        "Aberracion cromatica leve",
+        "Distorsion calorica",
+        "Retiula desgastada"
+      ],
+      "luz": [
+        "Calor radiante desde el suelo",
+        "Neblina calida sobre horizonte"
+      ],
+      "notas": "Optica militar real Rblf 36? preguntar. Efecto oasis en post",
+      "critico": "ok"
+    },
+    {
+      "id": "846c1fd415c6",
+      "numero": 4,
+      "titulo": "Recuento de fuerzas",
+      "composicion": "Panoramica amplia. Dos grupos de T-34. Posible matte digital.",
+      "fx": [
+        "Polvo volumetrico tras tanques",
+        "Vibracion suelo"
+      ],
+      "svfx": [
+        "Matte painting fondo",
+        "Polvo digital extension",
+        "18 tanques (digital/miniaturas?)"
+      ],
+      "luz": [
+        "Luz filtrandose entre nube polvo",
+        "Gradiente de luz fondo a frente"
+      ],
+      "notas": "Decidir: miniaturas o CGI masivo. Polvo fisico marcando capas de profundidad",
+      "critico": "ok"
+    },
+    {
+      "id": "676671d2c5b4",
+      "numero": 5,
+      "titulo": "Ocultamiento en la ladera",
+      "composicion": "Plano medio StuG escondiendose. Vegetacion cubriendo casco.",
+      "fx": [
+        "Vegetacion dinamica (diorama)",
+        "Movimiento ramas al paso"
+      ],
+      "svfx": [
+        "Sombras volumetricas (refuerzo)",
+        "Sound design motores sovieticos"
+      ],
+      "luz": [
+        "Sombras profundas entre arbustos",
+        "Oscurecimiento gradual"
+      ],
+      "notas": "Diorama a escala vs real? Transicion iluminacion campo => bosque",
+      "critico": "ok"
+    },
+    {
+      "id": "839921004d73",
+      "numero": 6,
+      "titulo": "Primer disparo - PUNTO CRITICO",
+      "composicion": "PPP canon StuG disparando. Fogonazo iluminando metal.",
+      "fx": [
+        "Fogonazo volumetrico",
+        "Retroceso violento canon",
+        "Detonacion seca"
+      ],
+      "svfx": [
+        "Onda de choque visible",
+        "Reflejo fogonazo en metal",
+        "Impacto T-34 con explosion"
+      ],
+      "luz": [
+        "Iluminacion dinamica del fogonazo",
+        "Pico de luz CALIDA sincronizado",
+        "Destello en superficie"
+      ],
+      "notas": "CRITICO: sincronizar fogonazo fisico + luz + VFX. Define el realismo de toda la escena",
+      "critico": "critico"
+    },
+    {
+      "id": "430eabddc09a",
+      "numero": 7,
+      "titulo": "Impacto",
+      "composicion": "PL T-34 impacto directo lateral. Explosion envuelve torreta.",
+      "fx": [
+        "Explosion volumetrica fuego+humo",
+        "Fragmentos blindaje",
+        "Polvo onda expansiva"
+      ],
+      "svfx": [
+        "Fragmentos (refuerzo)",
+        "Turbulencia humo simulacion fluida",
+        "Iluminacion dinamica fogonazo"
+      ],
+      "luz": [
+        "Luz de explosion como fuente principal",
+        "Sombras proyectadas por el fogonazo"
+      ],
+      "notas": "Coreografia fragmentos: fisicos pequenos, grandes digitales. Seguridad pirotecnia en set",
+      "critico": "aviso"
+    },
+    {
+      "id": "a1eadb487678",
+      "numero": 8,
+      "titulo": "Retirada al bosque",
+      "composicion": "Travelling trasero. StuG retrocede a bosque. Humo + niebla.",
+      "fx": [
+        "Polvo orugas",
+        "Vegetacion moviendose",
+        "Humo con niebla"
+      ],
+      "svfx": [
+        "Humo residual (extension)",
+        "Niebla bosque volumetrica",
+        "Camara vibracion terreno"
+      ],
+      "luz": [
+        "Oscurecimiento progresivo",
+        "Sombras volumetricas entre arboles",
+        "Temperatura color baja"
+      ],
+      "notas": "Transicion tonal: campo abierto => bosque cerrado. Niebla como elemento narrativo",
+      "critico": "ok"
+    },
+    {
+      "id": "83a4135a81dd",
+      "numero": 9,
+      "titulo": "Duelo en el bosque - ESCENA MAS COMPLEJA",
+      "composicion": "Contrapicado entre arboles. T-34 vs StuG disparan simultaneo.",
+      "fx": [
+        "Fogonazos simultaneos",
+        "Chispas fragmentos",
+        "Arboles sacudidos por onda",
+        "Hojas volando"
+      ],
+      "svfx": [
+        "Onda expansiva visible",
+        "Chispas refuerzo visual",
+        "Particulas hojas digitales"
+      ],
+      "luz": [
+        "Iluminacion estroboscopica arboles",
+        "Luz sincronizada con dos fogonazos",
+        "Sombras multiples"
+      ],
+      "notas": "ESCENA MAS COMPLEJA: dos impactos simultaneos, coordinar 2 equipos fx. Luz estroboscopica",
+      "critico": "critico"
+    },
+    {
+      "id": "99aa5926b51b",
+      "numero": 10,
+      "titulo": "Torreta volando",
+      "composicion": "Camara lenta. Torreta T-34 despedida girando. Casco en fuego.",
+      "fx": [
+        "Torreta despedida (efecto fisico)",
+        "Chorro fuego hueco torreta",
+        "Fragmentos secundarios"
+      ],
+      "svfx": [
+        "Fisica pesada torreta refuerzo",
+        "Particulas fuego simulacion",
+        "Camara lenta post/overcrinking?"
+      ],
+      "luz": [
+        "Resplandor continuo del fuego",
+        "Iluminacion ambiental rojiza",
+        "Sombras danzantes del fuego"
+      ],
+      "notas": "Overcrinking vs post: decision con DoP. Efecto torreta: cable o presurizada?",
+      "critico": "ok"
+    }
+  ]
+}

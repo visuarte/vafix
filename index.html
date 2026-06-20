@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VAFIX — Planificación FX</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,sans-serif;background:#0d0d0d;color:#e0e0e0;padding:16px;min-height:100vh}
+h1{font-size:1.1rem;font-weight:600;color:#c0c0c0;margin-bottom:4px}
+.sub{font-size:.8rem;color:#888;margin-bottom:16px}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;max-width:600px;margin:0 auto}
+.card{background:#1a1a1a;border-radius:10px;padding:14px;cursor:pointer;border:1px solid #2a2a2a;transition:.15s}
+.card:active{transform:scale(.97)}
+.card .num{font-size:.7rem;font-weight:600;margin-bottom:4px;display:flex;align-items:center;gap:6px}
+.card .num .dot{width:8px;height:8px;border-radius:50%;display:inline-block}
+.card .nom{font-size:.85rem;font-weight:500;line-height:1.3;color:#fff}
+.card .tag{font-size:.65rem;margin-top:6px;padding:2px 8px;border-radius:4px;display:inline-block}
+
+.critico .num .dot{background:#ff4444}
+.critico .tag{background:#ff444422;color:#ff6666}
+.aviso .num .dot{background:#ffaa00}
+.aviso .tag{background:#ffaa0022;color:#ffcc44}
+.ok .num .dot{background:#22cc66}
+.ok .tag{background:#22cc6622;color:#44ee88}
+
+/* Modal */
+.modal-overlay{display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:#000000aa;z-index:100;align-items:flex-end}
+.modal-overlay.open{display:flex}
+.modal{background:#1a1a1a;border-radius:16px 16px 0 0;padding:20px;width:100%;max-width:500px;margin:0 auto;max-height:85vh;overflow-y:auto;animation:slideUp .2s}
+@keyframes slideUp{from{transform:translateY(100%)}to{transform:translateY(0)}}
+.modal h2{font-size:1rem;margin-bottom:4px;color:#fff}
+.modal .meta{font-size:.75rem;color:#888;margin-bottom:16px}
+.layer{margin-bottom:12px}
+.layer h3{font-size:.8rem;font-weight:600;margin-bottom:4px;padding:4px 8px;border-radius:4px;display:inline-block}
+.layer-fx h3{background:#ff444422;color:#ff6666}
+.layer-svfx h3{background:#4488ff22;color:#66aaff}
+.layer-luz h3{background:#ffaa0022;color:#ffcc44}
+.layer ul{list-style:none;font-size:.8rem;color:#bbb;padding-left:4px}
+.layer li{padding:2px 0;padding-left:12px;position:relative}
+.layer li::before{content:"·";position:absolute;left:0;color:#555}
+.notas{font-size:.78rem;color:#999;padding:8px;background:#222;border-radius:6px;margin-top:8px}
+.notas strong{color:#ffaa44}
+.critico-badge{display:inline-block;padding:4px 10px;border-radius:6px;font-size:.7rem;font-weight:600;margin-bottom:12px}
+.critico-badge.red{background:#ff444433;color:#ff6666;border:1px solid #ff444455}
+.critico-badge.yellow{background:#ffaa0033;color:#ffcc44;border:1px solid #ffaa0055}
+.close-btn{display:block;width:100%;padding:12px;background:#2a2a2a;border:none;color:#fff;font-size:.9rem;border-radius:8px;cursor:pointer;margin-top:12px;text-align:center}
+.close-btn:active{background:#333}
+
+@media(min-width:480px){.grid{grid-template-columns:1fr 1fr 1fr;gap:12px}}
+@media(min-width:700px){.grid{grid-template-columns:1fr 1fr 1fr 1fr;gap:14px}
+body{padding:24px} h1{font-size:1.3rem}}
+</style>
+</head>
+<body>
+
+<h1>VAFIX</h1>
+<div class="sub">StuG III vs T-34 · <span id="total"></span></div>
+<div class="grid" id="grid"></div>
+
+<div class="modal-overlay" id="modal">
+  <div class="modal" id="modal-content"></div>
+</div>
+
+<script>
+async function init(){
+  const cacheKey='vafix-data'
+  let data
+
+  // Try cache first (offline)
+  const cached=localStorage.getItem(cacheKey)
+  if(cached){data=JSON.parse(cached)}
+
+  // Fetch fresh, fallback to cache
+  try{
+    const r=await fetch('data.json?_='+Date.now())
+    const fresh=await r.json()
+    localStorage.setItem(cacheKey,JSON.stringify(fresh))
+    data=fresh
+  }catch(e){
+    if(!data)throw e
+  }
+
+  document.getElementById('total').textContent=data.total+' viñetas · '+data.cliente
+
+  // Sort: criticos primero, luego avisos, luego ok
+  const orden={critico:0,aviso:1,ok:2}
+  data.vignetas.sort((a,b)=>orden[a.critico]-orden[b.critico]||a.numero-b.numero)
+
+  const grid=document.getElementById('grid')
+  data.vignetas.forEach(v=>{
+    const card=document.createElement('div')
+    card.className='card '+v.critico
+    const tags={critico:'⚠ CRÍTICO',aviso:'⚠ ATENCIÓN',ok:'OK'}
+    card.innerHTML=`
+      <div class="num"><span class="dot"></span>VIÑETA ${v.numero}</div>
+      <div class="nom">${v.titulo}</div>
+      <div class="tag">${tags[v.critico]||''}</div>
+    `
+    card.onclick=()=>openModal(v,data)
+    grid.appendChild(card)
+  })
+}
+
+function openModal(v,data){
+  const m=document.getElementById('modal')
+  const c=document.getElementById('modal-content')
+  const tags={critico:'red',aviso:'yellow',ok:''}
+  const labels={critico:'⚠ SINCRONIZACIÓN CRÍTICA',aviso:'⚠ REQUIERE ATENCIÓN',ok:''}
+  
+  let html=`
+    <div class="critico-badge ${tags[v.critico]}">${labels[v.critico]||'· SINCRONIZACIÓN ESTÁNDAR ·'}</div>
+    <h2>VIÑETA ${v.numero}: ${v.titulo}</h2>
+    <div class="meta">${v.composicion||''}</div>
+  `
+  
+  const layers=[
+    {key:'fx',label:'F/x (Físicos)',cls:'layer-fx'},
+    {key:'svfx',label:'SVfx (Visuales)',cls:'layer-svfx'},
+    {key:'luz',label:'Iluminación',cls:'layer-luz'}
+  ]
+  
+  layers.forEach(l=>{
+    if(!v[l.key]||!v[l.key].length)return
+    html+=`<div class="layer ${l.cls}"><h3>${l.label}</h3><ul>`
+    v[l.key].forEach(item=>{html+=`<li>${item}</li>`})
+    html+=`</ul></div>`
+  })
+  
+  if(v.notas){
+    html+=`<div class="notas"><strong>Notas:</strong> ${v.notas}</div>`
+  }
+  
+  html+=`<button class="close-btn" onclick="closeModal()">Cerrar</button>`
+  c.innerHTML=html
+  m.classList.add('open')
+}
+
+function closeModal(){
+  document.getElementById('modal').classList.remove('open')
+}
+
+document.getElementById('modal').onclick=function(e){
+  if(e.target===this)closeModal()
+}
+
+init()
+</script>
+</body>
+</html>
