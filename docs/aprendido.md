@@ -84,3 +84,21 @@ temporal bien modelada.
 | 2 - Filmación | Cómo se rueda fuego real | Todas, pero especialmente V7 (explosión torreta) |
 | 3 - Seguridad | Protocolos de distancia y protección | V6, V7, V9 (las que tienen pirotecnia) |
 | 4 - Bullet hits | Impactos controlados | V6 (primer disparo), V7 (impacto T-34) |
+| 5 - Animatrónica | Movimiento mecánico de vehículos | V10 (torreta despedida), V6 (retroceso cañón) |
+
+---
+
+## Video 5: Cómo empezar con Animatrónica
+`https://www.youtube.com/watch?v=8VzQshnrvN0`
+
+**Qué nos da:**
+- Flujo de trabajo para crear movimiento mecánico en set
+- Materiales, motores, control remoto
+- Cómo se integra la animatrónica con los FX físicos
+- La diferencia entre un vehículo real y uno animatrónico
+
+**Para VAFIX:**
+- V10 (torreta volando) puede ser cable o presurizada — decisión de ingeniería
+- El retroceso del cañón en V6 necesita sincronización mecánica
+- Las viñetas con movimiento requieren campo "tipo de accionamiento"
+- La timeline debe considerar tiempos mecánicos (no solo explosivos)
