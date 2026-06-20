@@ -63,6 +63,17 @@ h1{font-size:1.1rem;font-weight:600;color:#c0c0c0;margin-bottom:4px}
 .close-btn{display:block;width:100%;padding:12px;background:#2a2a2a;border:none;color:#fff;font-size:.9rem;border-radius:8px;cursor:pointer;margin-top:12px;text-align:center}
 .close-btn:active{background:#333}
 
+.guide{background:#151515;border:1px solid #2a2a2a;border-radius:8px;padding:10px 14px;margin-bottom:14px;font-size:.75rem;line-height:1.5;color:#aaa;max-width:600px;margin-left:auto;margin-right:auto}
+.guide strong{color:#ddd}
+.guide .g-row{display:flex;gap:14px;flex-wrap:wrap;margin-top:6px}
+.guide .g-item{display:flex;align-items:center;gap:5px}
+.guide .g-dot{width:10px;height:10px;border-radius:3px;flex-shrink:0}
+.g-dot.fx{background:#ff4444}
+.g-dot.svfx{background:#4488ff}
+.g-dot.luz{background:#ffaa00}
+.g-dot.sync{background:#fff;width:14px;height:2px;position:relative}
+.g-dot.sync::after{content:"\26a0";position:absolute;top:-7px;left:2px;font-size:10px;color:#ff4444}
+
 @media(min-width:480px){.grid{grid-template-columns:1fr 1fr 1fr;gap:12px}}
 @media(min-width:700px){.grid{grid-template-columns:1fr 1fr 1fr 1fr;gap:14px}
 body{padding:24px} h1{font-size:1.3rem}}
@@ -71,7 +82,19 @@ body{padding:24px} h1{font-size:1.3rem}}
 <body>
 
 <h1>VAFIX</h1>
-<div class="sub">StuG III vs T-34 · <span id="total"></span></div>
+<div class="sub" id="subtitle"></div>
+
+<div class="guide">
+  <strong>Cada vi&ntilde;eta tiene 3 equipos:</strong>
+  <div class="g-row">
+    <div class="g-item"><span class="g-dot fx"></span> F/x f&iacute;sicos (Santiago)</div>
+    <div class="g-item"><span class="g-dot svfx"></span> SVfx visuales (VFX)</div>
+    <div class="g-item"><span class="g-dot luz"></span> Iluminaci&oacute;n (DoP)</div>
+    <div class="g-item"><span class="g-dot sync"></span> Sincron&iacute;a cr&iacute;tica</div>
+  </div>
+  <div style="margin-top:6px;color:#888">Pulsa una vi&ntilde;eta para ver el desglose y la <strong>timeline de sincronizaci&oacute;n</strong>: cu&aacute;ndo act&uacute;a cada equipo y d&oacute;nde deben coordinarse.</div>
+</div>
+
 <div class="grid" id="grid"></div>
 
 <div class="modal-overlay" id="modal">
@@ -83,7 +106,7 @@ const DATA = {"proyecto": "StuG III vs T-34", "cliente": "Santiago Espin Canovas
 function init(){
   const orden={critico:0,aviso:1,ok:2}
   DATA.vignetas.sort((a,b)=>orden[a.critico]-orden[b.critico]||a.numero-b.numero)
-  document.getElementById('total').textContent=DATA.total+' vignetas | '+DATA.cliente
+  document.getElementById('subtitle').textContent=DATA.total+' vignetas | '+DATA.proyecto+' | '+DATA.cliente
   const grid=document.getElementById('grid')
   DATA.vignetas.forEach(function(v){
     var card=document.createElement('div')
