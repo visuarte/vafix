@@ -130,12 +130,12 @@ function openModal(v){
   if(v.timeline){
     var tl=v.timeline
     html+='<div class="timeline"><div class="tl-title">Sincronizaci\u00f3n (segundos)</div>'
-    var layers=[
+    var tlLayers=[
       {key:'fx',label:'F/x',cls:'fx'},
       {key:'svfx',label:'SVfx',cls:'svfx'},
       {key:'luz',label:'Luz',cls:'luz'}
     ]
-    layers.forEach(function(l){
+    tlLayers.forEach(function(l){
       var t=tl[l.key]
       if(!t)return
       var left=(t.start/tl.total_s*100)
@@ -155,7 +155,7 @@ function openModal(v){
     })
     // Devices
     html+='<div class="tl-device">'
-    layers.forEach(function(l){
+    tlLayers.forEach(function(l){
       var t=tl[l.key]
       if(t&&t.device)html+='<span class="d-'+l.cls+'">'+l.label+': '+t.device+'</span>'
     })
