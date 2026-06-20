@@ -41,6 +41,22 @@ h1{font-size:1.1rem;font-weight:600;color:#c0c0c0;margin-bottom:4px}
 .layer li::before{content:"·";position:absolute;left:0;color:#555}
 .notas{font-size:.78rem;color:#999;padding:8px;background:#222;border-radius:6px;margin-top:8px}
 .notas strong{color:#ffaa44}
+.timeline{background:#111;border-radius:8px;padding:12px;margin-top:12px;overflow-x:auto}
+.tl-title{font-size:.7rem;color:#888;margin-bottom:8px;text-transform:uppercase;letter-spacing:.5px}
+.tl-row{display:flex;align-items:center;margin-bottom:4px;height:24px;position:relative;min-width:200px}
+.tl-label{width:44px;font-size:.65rem;font-weight:600;flex-shrink:0}
+.tl-track{flex:1;height:16px;background:#1a1a1a;border-radius:4px;position:relative;overflow:hidden}
+.tl-bar{position:absolute;height:16px;border-radius:3px;top:0;min-width:2px}
+.tl-bar.fx{background:#ff4444}
+.tl-bar.svfx{background:#4488ff}
+.tl-bar.luz{background:#ffaa00}
+.tl-sync{position:absolute;width:2px;background:#fff;top:-2px;bottom:-2px;z-index:2}
+.tl-sync::after{content:"\26a0";position:absolute;top:-14px;left:-6px;font-size:10px;color:#ff4444}
+.tl-device{font-size:.65rem;color:#666;margin-top:2px;padding-left:44px}
+.tl-device span{margin-right:12px}
+.tl-device .d-fx{color:#ff6666}
+.tl-device .d-svfx{color:#66aaff}
+.tl-device .d-luz{color:#ffcc44}
 .critico-badge{display:inline-block;padding:4px 10px;border-radius:6px;font-size:.7rem;font-weight:600;margin-bottom:12px}
 .critico-badge.red{background:#ff444433;color:#ff6666;border:1px solid #ff444455}
 .critico-badge.yellow{background:#ffaa0033;color:#ffcc44;border:1px solid #ffaa0055}
@@ -108,6 +124,42 @@ function openModal(v){
   
   if(v.notas){
     html+=`<div class="notas"><strong>Notas:</strong> ${v.notas}</div>`
+  }
+
+  // Timeline
+  if(v.timeline){
+    var tl=v.timeline
+    html+='<div class="timeline"><div class="tl-title">Sincronizaci\u00f3n (segundos)</div>'
+    var layers=[
+      {key:'fx',label:'F/x',cls:'fx'},
+      {key:'svfx',label:'SVfx',cls:'svfx'},
+      {key:'luz',label:'Luz',cls:'luz'}
+    ]
+    layers.forEach(function(l){
+      var t=tl[l.key]
+      if(!t)return
+      var left=(t.start/tl.total_s*100)
+      var width=(t.dur/tl.total_s*100)
+      html+='<div class="tl-row">'+
+        '<div class="tl-label" style="color:'+({fx:'#ff6666',svfx:'#66aaff',luz:'#ffcc44'})[l.cls]+'">'+l.label+'</div>'+
+        '<div class="tl-track">'+
+        '<div class="tl-bar '+l.cls+'" style="left:'+left+'%;width:'+width+'%"></div>'
+      // Sync points
+      if(tl.sync){
+        tl.sync.forEach(function(s){
+          var sp=(s/tl.total_s*100)
+          html+='<div class="tl-sync" style="left:'+sp+'%"></div>'
+        })
+      }
+      html+='</div></div>'
+    })
+    // Devices
+    html+='<div class="tl-device">'
+    layers.forEach(function(l){
+      var t=tl[l.key]
+      if(t&&t.device)html+='<span class="d-'+l.cls+'">'+l.label+': '+t.device+'</span>'
+    })
+    html+='</div></div>'
   }
   
   html+=`<button class="close-btn" onclick="closeModal()">Cerrar</button>`

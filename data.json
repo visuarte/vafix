@@ -26,7 +26,26 @@
         "Sin sol directo"
       ],
       "notas": "Coordinar polvo fisico + digital. Plantear pre-viz semana 1",
-      "critico": "aviso"
+      "critico": "aviso",
+      "timeline": {
+        "total_s": 5,
+        "fx": {
+          "start": 0,
+          "dur": 4,
+          "device": "Debris Cannon"
+        },
+        "svfx": {
+          "start": 1,
+          "dur": 4,
+          "device": "Compuesto digital"
+        },
+        "luz": {
+          "start": 0,
+          "dur": 5,
+          "device": "Difusores LED"
+        },
+        "sync": []
+      }
     },
     {
       "id": "67c19ede1c57",
@@ -48,7 +67,26 @@
         "Fuente lateral calida simulando atardecer"
       ],
       "notas": "Croma para silueta? Decidir con VFX. Practico de humo sincronizado",
-      "critico": "ok"
+      "critico": "ok",
+      "timeline": {
+        "total_s": 4,
+        "fx": {
+          "start": 0,
+          "dur": 3,
+          "device": "Compresor humo"
+        },
+        "svfx": {
+          "start": 1,
+          "dur": 3,
+          "device": "Atmósfera digital"
+        },
+        "luz": {
+          "start": 0,
+          "dur": 4,
+          "device": "Panel LED cálido"
+        },
+        "sync": []
+      }
     },
     {
       "id": "43e7fe8f9344",
@@ -70,7 +108,26 @@
         "Neblina calida sobre horizonte"
       ],
       "notas": "Optica militar real Rblf 36? preguntar. Efecto oasis en post",
-      "critico": "ok"
+      "critico": "ok",
+      "timeline": {
+        "total_s": 4,
+        "fx": {
+          "start": 0,
+          "dur": 2,
+          "device": "Air Squib"
+        },
+        "svfx": {
+          "start": 0,
+          "dur": 4,
+          "device": "Distorsión digital"
+        },
+        "luz": {
+          "start": 1,
+          "dur": 2,
+          "device": "Calor radiante LED"
+        },
+        "sync": []
+      }
     },
     {
       "id": "846c1fd415c6",
@@ -91,7 +148,26 @@
         "Gradiente de luz fondo a frente"
       ],
       "notas": "Decidir: miniaturas o CGI masivo. Polvo fisico marcando capas de profundidad",
-      "critico": "ok"
+      "critico": "ok",
+      "timeline": {
+        "total_s": 5,
+        "fx": {
+          "start": 0,
+          "dur": 3,
+          "device": "Debris Cannon"
+        },
+        "svfx": {
+          "start": 1,
+          "dur": 4,
+          "device": "Matte painting"
+        },
+        "luz": {
+          "start": 0,
+          "dur": 5,
+          "device": "Gradiente LED"
+        },
+        "sync": []
+      }
     },
     {
       "id": "676671d2c5b4",
@@ -111,7 +187,26 @@
         "Oscurecimiento gradual"
       ],
       "notas": "Diorama a escala vs real? Transicion iluminacion campo => bosque",
-      "critico": "ok"
+      "critico": "ok",
+      "timeline": {
+        "total_s": 4,
+        "fx": {
+          "start": 0,
+          "dur": 4,
+          "device": "Servos vegetación"
+        },
+        "svfx": {
+          "start": 0,
+          "dur": 3,
+          "device": "Sombras volumétricas"
+        },
+        "luz": {
+          "start": 1,
+          "dur": 3,
+          "device": "Oscurecimiento progresivo"
+        },
+        "sync": []
+      }
     },
     {
       "id": "839921004d73",
@@ -134,7 +229,28 @@
         "Destello en superficie"
       ],
       "notas": "CRITICO: sincronizar fogonazo fisico + luz + VFX. Define el realismo de toda la escena",
-      "critico": "critico"
+      "critico": "critico",
+      "timeline": {
+        "total_s": 3,
+        "fx": {
+          "start": 0,
+          "dur": 2,
+          "device": "Propane Cannon"
+        },
+        "svfx": {
+          "start": 1,
+          "dur": 2,
+          "device": "Onda choque digital"
+        },
+        "luz": {
+          "start": 0.5,
+          "dur": 2,
+          "device": "Flash DMX 1000W sincronizado"
+        },
+        "sync": [
+          1.0
+        ]
+      }
     },
     {
       "id": "430eabddc09a",
@@ -156,7 +272,28 @@
         "Sombras proyectadas por el fogonazo"
       ],
       "notas": "Coreografia fragmentos: fisicos pequenos, grandes digitales. Seguridad pirotecnia en set",
-      "critico": "aviso"
+      "critico": "aviso",
+      "timeline": {
+        "total_s": 4,
+        "fx": {
+          "start": 0,
+          "dur": 3,
+          "device": "Propane Cannon + Air Squibs"
+        },
+        "svfx": {
+          "start": 1,
+          "dur": 3,
+          "device": "Turbulencia fluida"
+        },
+        "luz": {
+          "start": 0,
+          "dur": 3,
+          "device": "Flash DMX + llamarada"
+        },
+        "sync": [
+          1.5
+        ]
+      }
     },
     {
       "id": "a1eadb487678",
@@ -179,7 +316,26 @@
         "Temperatura color baja"
       ],
       "notas": "Transicion tonal: campo abierto => bosque cerrado. Niebla como elemento narrativo",
-      "critico": "ok"
+      "critico": "ok",
+      "timeline": {
+        "total_s": 5,
+        "fx": {
+          "start": 0,
+          "dur": 4,
+          "device": "Debris Cannon"
+        },
+        "svfx": {
+          "start": 2,
+          "dur": 3,
+          "device": "Niebla volumétrica"
+        },
+        "luz": {
+          "start": 0,
+          "dur": 5,
+          "device": "Temperatura color baja LED"
+        },
+        "sync": []
+      }
     },
     {
       "id": "83a4135a81dd",
@@ -203,7 +359,29 @@
         "Sombras multiples"
       ],
       "notas": "ESCENA MAS COMPLEJA: dos impactos simultaneos, coordinar 2 equipos fx. Luz estroboscopica",
-      "critico": "critico"
+      "critico": "critico",
+      "timeline": {
+        "total_s": 4,
+        "fx": {
+          "start": 0,
+          "dur": 3,
+          "device": "2× Propane Cannon"
+        },
+        "svfx": {
+          "start": 1,
+          "dur": 3,
+          "device": "Onda expansiva doble"
+        },
+        "luz": {
+          "start": 0.5,
+          "dur": 2.5,
+          "device": "2× Flash DMX estroboscópico"
+        },
+        "sync": [
+          0.5,
+          2.5
+        ]
+      }
     },
     {
       "id": "99aa5926b51b",
@@ -226,7 +404,26 @@
         "Sombras danzantes del fuego"
       ],
       "notas": "Overcrinking vs post: decision con DoP. Efecto torreta: cable o presurizada?",
-      "critico": "ok"
+      "critico": "ok",
+      "timeline": {
+        "total_s": 5,
+        "fx": {
+          "start": 0,
+          "dur": 4,
+          "device": "Nitrogen Jack"
+        },
+        "svfx": {
+          "start": 2,
+          "dur": 3,
+          "device": "Física pesada refuerzo"
+        },
+        "luz": {
+          "start": 0,
+          "dur": 4,
+          "device": "Resplandor fuego LED"
+        },
+        "sync": []
+      }
     }
   ]
 }
