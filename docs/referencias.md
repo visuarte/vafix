@@ -172,6 +172,24 @@ T+250ms: Ráfagas escombros secundarias
 - Seguro responsabilidad civil cinematográfica
 - Dotación de Bomberos en set
 
+### 5.9 Nivel Prime — Hollywood Tier
+
+| Sistema | Especificación |
+|---|---|
+| Boquilla inyección aeroespacial | 350 bares, atomización por pulso químico |
+| Hydro-Cannon | Pistón hidráulico + agua a velocidad supersónica |
+| Válvula de ruptura por disco calibrado | Liberación a velocidad del sonido (sin piezas móviles) |
+| Virtual Production + Unreal Engine | Set LED, disparo simbiótico físico-virtual |
+| CFD (ANSYS / Houdini) | Simulación predictiva: dispersión térmica, velocidad escombros, presión acústica |
+
+**Secuencia Prime:**
+```
+Disparo físico → sensores IR analizan llama en microsegundos
+→ motor render proyecta continuación en pantallas LED
+→ luz física + luz virtual coinciden en un solo fotograma
+→ cámara captura explosión completa sin postproducción
+```
+
 ### Mapa dispositivo → viñeta
 
 | Viñeta | Efecto | Dispositivo recomendado |
